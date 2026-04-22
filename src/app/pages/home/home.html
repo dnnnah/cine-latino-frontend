@@ -1,0 +1,154 @@
+<!-- Dependencias -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Lato:wght@300;400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- Capas de fondo -->
+<div class="film-grain" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
+<!-- Contenedor principal -->
+<div class="container-xl site-wrapper d-flex flex-column min-vh-100 position-relative">
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header d-flex align-items-center justify-content-between py-4 px-md-5 mt-3 border-bottom border-glass shadow-lg">
+
+    <!-- Logo lado izquierdo -->
+    <div class="brand">
+      <a routerLink="/" class="text-decoration-none d-flex align-items-end">
+        <span class="brand-cine">CINE</span>
+        <span class="brand-latino">LATINO</span>
+      </a>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="d-none d-sm-flex align-items-center gap-4" aria-label="Navegación principal">
+      <a routerLink="/"        class="nav-link-cine text-uppercase fw-bold small tracking-widest active">Inicio</a>
+      <a routerLink="/catalogo" class="nav-link-cine text-uppercase fw-bold small tracking-widest">Catálogo</a>
+    </nav>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main class="flex-grow-1" id="main-content">
+
+    <!-- Hero -->
+    <section class="hero text-center py-5 my-md-5" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="badge-cine-modern mb-3 d-inline-block">
+          <i class="bi bi-stars me-2" aria-hidden="true"></i>PROYECTO ACADÉMICO 2026
+        </span>
+        <h1 id="hero-title" class="hero-title display-1 mb-4">
+          EL CINE EN<br>
+          <span class="text-accent-cine">español,</span><br>
+          <span class="sub-hero">A TU ALCANCE</span>
+        </h1>
+        <div class="hero-line mx-auto"></div>
+      </div>
+    </section>
+
+    <!-- Descripción -->
+    <section class="row justify-content-center mb-5" aria-label="Descripción del catálogo">
+      <div class="col-12 col-lg-10">
+        <div class="description-card p-4 p-md-5 border-0 position-relative overflow-hidden">
+          <div class="row align-items-center g-5">
+
+            <div class="col-md-7">
+              <p class="lead fw-light text-silver mb-4">
+                <span class="first-letter display-4 fw-bold text-oro">C</span>ineLatino
+                es un santuario digital dedicado a la preservación y difusión de la narrativa
+                hispana. Desde la <strong class="text-white">Época de Oro</strong> hasta el
+                vanguardismo contemporáneo.
+              </p>
+              <p class="text-muted-cine small mb-5">
+                Desarrollado con una arquitectura robusta: <strong>Angular 21</strong> en la
+                interfaz, <strong>Laravel 13</strong> en el núcleo y <strong>MySQL</strong>
+                como guardián de la información.
+              </p>
+              <div class="d-grid d-md-block">
+                <a routerLink="/catalogo" class="btn btn-cine-primary btn-lg shadow-gold">
+                  EXPLORAR CATÁLOGO <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-5 d-none d-md-flex justify-content-center">
+              <div class="icon-circle shadow-lg" aria-hidden="true">
+                <i class="bi bi-camera-reels text-gold display-1"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Características -->
+    <section class="pb-5" aria-label="Características">
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card h-100 p-4 text-center">
+            <div class="feature-number" aria-hidden="true">01</div>
+            <h2 class="h4 text-uppercase fw-bold mb-3 tracking-wider">Curaduría</h2>
+            <p class="small text-silver opacity-75 mb-0">
+              Una colección de más de 20 títulos seleccionados por su impacto cultural y artístico.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card h-100 p-4 text-center">
+            <div class="feature-number" aria-hidden="true">02</div>
+            <h2 class="h4 text-uppercase fw-bold mb-3 tracking-wider">Gestión Pro</h2>
+            <p class="small text-silver opacity-75 mb-0">
+              Interfaz intuitiva para navegar y administrar datos en tiempo real con total fluidez.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card h-100 p-4 text-center">
+            <div class="feature-number" aria-hidden="true">03</div>
+            <h2 class="h4 text-uppercase fw-bold mb-3 tracking-wider">API REST</h2>
+            <p class="small text-silver opacity-75 mb-0">
+              Sincronización perfecta entre el servidor y el cliente mediante tecnología de punta.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer border-top border-glass py-5 mt-auto text-center" role="contentinfo">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="footer-materia text-uppercase tracking-widest fw-bold mb-4">
+          Desarrollo de Aplicaciones Web
+        </p>
+        <div class="row g-3 footer-credits small text-uppercase">
+          <div class="col-4">
+            ESTUDIANTE<br>
+            <span class="text-white fw-bold">Donnovan Trejo Corona</span>
+          </div>
+          <div class="col-4">
+            CÓDIGO<br>
+            <span class="text-white fw-bold">224065707</span>
+          </div>
+          <div class="col-4">
+            CONTACTO<br>
+            <a href="mailto:tucorreo@universidad.edu" class="footer-link fw-bold">
+              donnovan.trejo6570@gmail.com
+            </a>
+          </div>
+        </div>
+        <hr class="my-4 border-glass">
+        <p class="footer-copy opacity-50 mb-0">&copy; 2026 CineLatino · Producido por Donnovan</p>
+      </div>
+    </div>
+  </footer>
+
+</div>

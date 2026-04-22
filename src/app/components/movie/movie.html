@@ -1,0 +1,120 @@
+<!-- Capas de fondo -->
+<div class="film-grain" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
+<div class="container-xl site-wrapper d-flex flex-column min-vh-100 position-relative">
+
+  <!-- HEADER -->
+  <header class="site-header d-flex align-items-center justify-content-between py-4 px-md-5 mt-3 border-bottom border-glass shadow-lg">
+    <div class="brand">
+      <a routerLink="/" class="text-decoration-none d-flex align-items-end">
+        <span class="brand-cine">CINE</span>
+        <span class="brand-latino">LATINO</span>
+      </a>
+    </div>
+    <nav class="d-none d-sm-flex align-items-center gap-4">
+      <a routerLink="/"         class="nav-link-cine text-uppercase fw-bold small tracking-widest">Inicio</a>
+      <a routerLink="/catalogo" class="nav-link-cine text-uppercase fw-bold small tracking-widest">Catálogo</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow-1 py-5" *ngIf="movie">
+    <div class="container">
+
+      <!-- Flecha volver -->
+      <a routerLink="/catalogo" class="back-link mb-5 d-inline-flex align-items-center gap-2">
+        <i class="bi bi-arrow-left"></i>
+        <span>VOLVER AL CATÁLOGO</span>
+      </a>
+
+      <div class="row g-5 align-items-start mt-1">
+
+        <!-- Portada -->
+        <div class="col-md-4 text-center">
+          <div class="poster-wrapper">
+            <img [src]="movie.cover" [alt]="movie.title" class="movie-poster">
+            <div class="poster-shine" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="col-md-8">
+
+          <span class="badge-cine-modern mb-3 d-inline-block">
+            <i class="bi bi-camera-reels me-2"></i>{{ movie.year }}
+          </span>
+
+          <h1 class="detail-title mb-2">{{ movie.title }}</h1>
+
+          <div class="hero-line mb-4"></div>
+
+          <p class="synopsis-label">SINOPSIS</p>
+          <p class="detail-synopsis">{{ movie.synopsis }}</p>
+
+          <!-- Botones de acción -->
+          <div class="mt-5 d-flex gap-3 flex-wrap">
+            <a [routerLink]="['/catalogo/editar', movie.id]" class="btn-cine-primary">
+              <i class="bi bi-pencil-fill me-2"></i>EDITAR
+            </a>
+            <button class="btn-danger-cine" (click)="showConfirm = true" *ngIf="!showConfirm">
+              <i class="bi bi-trash-fill me-2"></i>ELIMINAR
+            </button>
+          </div>
+
+          <!-- Confirmación eliminar -->
+          <div class="confirm-box mt-4" *ngIf="showConfirm">
+            <p class="confirm-text">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>
+              ¿Estás seguro de que deseas eliminar <strong>{{ movie.title }}</strong>? Esta acción no se puede deshacer.
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <button class="btn-danger-cine" (click)="delete()">
+                <i class="bi bi-trash-fill me-2"></i>SÍ, ELIMINAR
+              </button>
+              <button class="btn-outline-gold" (click)="showConfirm = false">
+                CANCELAR
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Cargando -->
+  <div class="flex-grow-1 d-flex align-items-center justify-content-center" *ngIf="!movie">
+    <div class="text-center">
+      <div class="spinner-border mb-3"
+           style="color: var(--oro); width:3rem; height:3rem;"
+           role="status"></div>
+      <p class="text-silver text-uppercase tracking-widest small">Cargando película...</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer border-top border-glass py-5 mt-auto text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="footer-materia text-uppercase tracking-widest fw-bold mb-4">
+          Desarrollo de Aplicaciones Web
+        </p>
+        <div class="row g-3 footer-credits small text-uppercase">
+          <div class="col-4">ESTUDIANTE<br><span class="text-white fw-bold">Donnovan Trejo Corona</span></div>
+          <div class="col-4">CÓDIGO<br><span class="text-white fw-bold">224065707</span></div>
+          <div class="col-4">CONTACTO<br>
+            <a href="mailto:donnovan.trejo6570@gmail.com" class="footer-link fw-bold">
+              donnovan.trejo6570@gmail.com
+            </a>
+          </div>
+        </div>
+        <hr class="my-4 border-glass">
+        <p class="footer-copy opacity-50 mb-0">&copy; 2026 CineLatino · Producido por Donnovan</p>
+      </div>
+    </div>
+  </footer>
+
+</div>

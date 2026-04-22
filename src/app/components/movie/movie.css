@@ -1,0 +1,103 @@
+/* ══ PÓSTER ══ */
+.poster-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.movie-poster {
+  width: 100%;
+  max-width: 280px;
+  border: 1px solid rgba(212,175,55,0.3);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,255,255,0.05);
+  display: block;
+  margin: 0 auto;
+  background: #111;
+}
+
+.poster-shine {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+  pointer-events: none;
+}
+
+/* ══ FLECHA VOLVER ══ */
+.back-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--silver) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover { color: var(--oro) !important; }
+.back-link i { transition: transform 0.3s; }
+.back-link:hover i { transform: translateX(-4px); }
+
+/* ══ TIPOGRAFÍA ══ */
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.synopsis-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--oro);
+  margin-bottom: 8px;
+}
+
+.detail-synopsis {
+  color: var(--silver);
+  line-height: 1.9;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* ══ BOTÓN ELIMINAR ══ */
+.btn-danger-cine {
+  background: transparent;
+  color: var(--rojo-light) !important;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  border: 2px solid var(--rojo);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-danger-cine:hover {
+  background: var(--rojo);
+  color: #fff !important;
+  box-shadow: 0 0 25px rgba(192,57,43,0.5);
+}
+
+/* ══ CONFIRMACIÓN ══ */
+.confirm-box {
+  background: rgba(192,57,43,0.08);
+  border: 1px solid rgba(192,57,43,0.35);
+  padding: 1.5rem;
+}
+
+.confirm-text {
+  color: var(--silver);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.confirm-text strong {
+  color: #fff;
+}

@@ -1,0 +1,146 @@
+<!-- Capas de fondo -->
+<div class="film-grain" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
+<div class="container-xl site-wrapper d-flex flex-column min-vh-100 position-relative">
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header d-flex align-items-center justify-content-between py-4 px-md-5 mt-3 border-bottom border-glass shadow-lg">
+    <div class="brand">
+      <a routerLink="/" class="text-decoration-none d-flex align-items-end">
+        <span class="brand-cine">CINE</span>
+        <span class="brand-latino">LATINO</span>
+      </a>
+    </div>
+    <nav class="d-none d-sm-flex align-items-center gap-4">
+      <a routerLink="/"         class="nav-link-cine text-uppercase fw-bold small tracking-widest">Inicio</a>
+      <a routerLink="/catalogo" class="nav-link-cine text-uppercase fw-bold small tracking-widest active">Catálogo</a>
+    </nav>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main class="flex-grow-1">
+
+    <!-- Hero -->
+    <section class="text-center py-5 my-md-4">
+      <div class="container">
+        <span class="badge-cine-modern mb-3">
+          <i class="bi bi-stars me-2"></i>CATÁLOGO COMPLETO
+        </span>
+        <h1 class="hero-title display-1 mb-4">
+          PELÍCULAS EN<br>
+          <span class="text-accent-cine">español,</span><br>
+          <span class="sub-hero">{{ movies.length }} TÍTULOS DISPONIBLES</span>
+        </h1>
+        <div class="hero-line mx-auto"></div>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <div class="catalogo-section">
+
+      <!-- Botón agregar — navega a página separada -->
+      <div class="d-flex justify-content-end mb-3">
+        <a routerLink="/catalogo/agregar" class="btn-cine-primary">
+          <i class="bi bi-plus-circle me-2"></i>NUEVA PELÍCULA
+        </a>
+      </div>
+
+      <!-- Tabla -->
+      <div class="table-cine-wrapper">
+        <table class="table table-cine mb-0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Portada</th>
+              <th>Título</th>
+              <th>Año</th>
+              <th>Sinopsis</th>
+              <th class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let movie of movies; let i = index">
+
+              <td class="text-muted-cine fw-bold">{{ i + 1 }}</td>
+
+              <td>
+                <img [src]="movie.cover"
+                     [alt]="movie.title"
+                     class="movie-thumb">
+              </td>
+
+              <td>
+                <a [routerLink]="['/movie', movie.id]" class="movie-link">
+                  {{ movie.title }}
+                </a>
+              </td>
+
+              <td>
+                <span class="badge-year">{{ movie.year }}</span>
+              </td>
+
+              <td>
+                <p class="synopsis-truncate">{{ movie.synopsis }}</p>
+              </td>
+
+              <td class="text-center">
+                <div class="d-flex gap-2 justify-content-center">
+                  <a [routerLink]="['/movie', movie.id]"
+                     class="btn-accion btn-accion-ver"
+                     title="Ver detalle">
+                    <i class="bi bi-eye-fill"></i>
+                  </a>
+                  <a [routerLink]="['/catalogo/editar', movie.id]"
+                     class="btn-accion btn-accion-editar"
+                     title="Editar">
+                    <i class="bi bi-pencil-fill"></i>
+                  </a>
+                  <button class="btn-accion btn-accion-eliminar"
+                          (click)="delete(movie.id)"
+                          title="Eliminar">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- /catalogo-section -->
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer border-top border-glass py-5 mt-auto text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="footer-materia text-uppercase tracking-widest fw-bold mb-4">
+          Desarrollo de Aplicaciones Web
+        </p>
+        <div class="row g-3 footer-credits small text-uppercase">
+          <div class="col-4">
+            ESTUDIANTE<br>
+            <span class="text-white fw-bold">Donnovan Trejo Corona</span>
+          </div>
+          <div class="col-4">
+            CÓDIGO<br>
+            <span class="text-white fw-bold">224065707</span>
+          </div>
+          <div class="col-4">
+            CONTACTO<br>
+            <a href="mailto:donnovan.trejo6570@gmail.com" class="footer-link fw-bold">
+              donnovan.trejo6570@gmail.com
+            </a>
+          </div>
+        </div>
+        <hr class="my-4 border-glass">
+        <p class="footer-copy opacity-50 mb-0">&copy; 2026 CineLatino · Producido por Donnovan</p>
+      </div>
+    </div>
+  </footer>
+
+</div>

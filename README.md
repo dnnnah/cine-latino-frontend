@@ -1,59 +1,119 @@
-# Frontend
+# CineLatino — Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Interfaz de usuario desarrollada con Angular 21 para visualizar y gestionar
+un catálogo de películas en español. Forma parte del proyecto académico CineLatino,
+una aplicación web full-stack desarrollada para la materia de Desarrollo de Aplicaciones Web.
 
-## Development server
+## Stack tecnológico
 
-To start a local development server, run:
+- **Angular** 21
+- **Bootstrap** 5.3
+- **Bootstrap Icons** 1.11
+- **Google Fonts**: Playfair Display, Bebas Neue, Lato
+- **TypeScript**
 
+## Requisitos previos
+
+- Node.js 25
+- npm
+
+## Instalación local
+
+1. Clona el repositorio:
 ```bash
-ng serve
+   git clone https://github.com/dnnnah/cinelatino-frontend.git
+   cd cinelatino-frontend
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Instala dependencias:
 ```bash
-ng generate component component-name
+   npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+3. Configura la URL del backend en `src/app/services/movie.ts`:
+```typescript
+   private apiUrl = 'http://127.0.0.1:8000/api/movies';
 ```
 
-## Building
-
-To build the project run:
-
+4. Inicia el servidor de desarrollo:
 ```bash
-ng build
+   ng serve
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+La aplicación corre en `http://localhost:4200`
 
-## Running unit tests
+## Vistas
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Ruta | Componente | Descripción |
+|------|------------|-------------|
+| `/` | HomeComponent | Página de inicio |
+| `/catalogo` | MoviesComponent | Lista de películas |
+| `/catalogo/agregar` | MovieCreateComponent | Agregar película |
+| `/catalogo/editar/:id` | MovieEditComponent | Editar película |
+| `/movie/:id` | MovieComponent | Detalle de película |
 
-```bash
-ng test
+## Capturas de pantalla
+
+### Inicio
+![Home](screenshots/home.png)
+
+### Catálogo
+![Catálogo](screenshots/catalogo.png)
+
+### Detalle de película
+![Detalle](screenshots/detalle.png)
+
+### Agregar película
+![Agregar](screenshots/agregar.png)
+
+### Editar película
+![Editar](screenshots/editar.png)
+
+## Estructura del proyecto
+
+```
+src/app/
+├── components/
+│   ├── movie/              # Detalle de película
+│   │   ├── movie.ts
+│   │   ├── movie.html
+│   │   └── movie.css
+│   ├── movies/             # Catálogo con tabla CRUD
+│   │   ├── movies.ts
+│   │   ├── movies.html
+│   │   └── movies.css
+│   ├── movie-create/       # Formulario agregar
+│   │   ├── movie-create.ts
+│   │   ├── movie-create.html
+│   │   └── movie-create.css
+│   └── movie-edit/         # Formulario editar
+│       ├── movie-edit.ts
+│       ├── movie-edit.html
+│       └── movie-edit.css
+├── pages/
+│   └── home/               # Página de inicio
+│       ├── home.ts
+│       ├── home.html
+│       └── home.css
+├── services/
+│   └── movie.ts            # Servicio HTTP con getAll, getOne, create, update, delete
+├── app.routes.ts           # Rutas de la aplicación
+├── app.config.ts           # Configuración HttpClient
+└── styles.css              # Estilos globales y variables CSS
 ```
 
-## Running end-to-end tests
+## Backend relacionado
 
-For end-to-end (e2e) testing, run:
+Este frontend consume la API REST de CineLatino desarrollada en Laravel 13.
 
-```bash
-ng e2e
-```
+Repositorio backend: [cine-latino-backend](https://github.com/dnnnah/cine-latino-backend)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Autor
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| | |
+|---|---|
+| **Estudiante** | Donnovan Trejo Corona |
+| **Código** | 224065707 |
+| **Materia** | Desarrollo de Aplicaciones Web |
+| **Año** | 2026 |
+| **Contacto** | donnovan.trejo6570@gmail.com |

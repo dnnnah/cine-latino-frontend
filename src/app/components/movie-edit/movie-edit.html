@@ -1,0 +1,120 @@
+<!-- Capas de fondo -->
+<div class="film-grain" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+
+<div class="container-xl site-wrapper d-flex flex-column min-vh-100 position-relative">
+
+  <!-- HEADER -->
+  <header class="site-header d-flex align-items-center justify-content-between py-4 px-md-5 mt-3 border-bottom border-glass shadow-lg">
+    <div class="brand">
+      <a routerLink="/" class="text-decoration-none d-flex align-items-end">
+        <span class="brand-cine">CINE</span>
+        <span class="brand-latino">LATINO</span>
+      </a>
+    </div>
+    <nav class="d-none d-sm-flex align-items-center gap-4">
+      <a routerLink="/"         class="nav-link-cine text-uppercase fw-bold small tracking-widest">Inicio</a>
+      <a routerLink="/catalogo" class="nav-link-cine text-uppercase fw-bold small tracking-widest">Catálogo</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow-1 py-5" *ngIf="movie">
+    <div class="container">
+
+      <!-- Flecha volver -->
+      <a [routerLink]="['/movie', id]" class="back-link mb-4 d-inline-flex align-items-center gap-2">
+        <i class="bi bi-arrow-left"></i>
+        <span>VOLVER AL DETALLE</span>
+      </a>
+
+      <!-- Título -->
+      <div class="text-center mb-5">
+        <span class="badge-cine-modern mb-3">
+          <i class="bi bi-pencil-square me-2"></i>EDITAR PELÍCULA
+        </span>
+        <h1 class="hero-title display-2 mb-3">
+          EDITAR<br>
+          <span class="text-accent-cine">película</span>
+        </h1>
+        <div class="hero-line mx-auto"></div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <div class="form-card">
+
+            <div class="mb-4">
+              <label class="form-label-cine">Título</label>
+              <input type="text"
+                     class="form-control form-control-cine"
+                     [(ngModel)]="movie.title">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label-cine">Año</label>
+              <input type="number"
+                     class="form-control form-control-cine"
+                     [(ngModel)]="movie.year">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label-cine">URL de portada</label>
+              <input type="text"
+                     class="form-control form-control-cine"
+                     [(ngModel)]="movie.cover">
+              <!-- Preview -->
+              <div class="mt-3 text-center" *ngIf="movie.cover">
+                <img [src]="movie.cover" [alt]="movie.title"
+                     style="max-width:120px; border:1px solid rgba(212,175,55,0.3);">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label-cine">Sinopsis</label>
+              <textarea class="form-control form-control-cine"
+                        [(ngModel)]="movie.synopsis"
+                        rows="4"></textarea>
+            </div>
+
+            <div class="d-flex gap-3 mt-4">
+              <button class="btn-cine-primary flex-grow-1" (click)="update()">
+                <i class="bi bi-save me-2"></i>GUARDAR CAMBIOS
+              </button>
+              <button class="btn-outline-gold" (click)="cancel()">
+                CANCELAR
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer border-top border-glass py-5 mt-auto text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="footer-materia text-uppercase tracking-widest fw-bold mb-4">
+          Desarrollo de Aplicaciones Web
+        </p>
+        <div class="row g-3 footer-credits small text-uppercase">
+          <div class="col-4">ESTUDIANTE<br><span class="text-white fw-bold">Donnovan Trejo Corona</span></div>
+          <div class="col-4">CÓDIGO<br><span class="text-white fw-bold">224065707</span></div>
+          <div class="col-4">CONTACTO<br>
+            <a href="mailto:donnovan.trejo6570@gmail.com" class="footer-link fw-bold">
+              donnovan.trejo6570@gmail.com
+            </a>
+          </div>
+        </div>
+        <hr class="my-4 border-glass">
+        <p class="footer-copy opacity-50 mb-0">&copy; 2026 CineLatino · Producido por Donnovan</p>
+      </div>
+    </div>
+  </footer>
+
+</div>

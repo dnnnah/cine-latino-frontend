@@ -1,0 +1,50 @@
+.back-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--silver) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover { color: var(--oro) !important; }
+.back-link:hover i { transform: translateX(-4px); }
+.back-link i { transition: transform 0.3s; }
+
+.form-card {
+  background: rgba(5,5,5,0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.form-label-cine {
+  color: var(--oro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-control-cine {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 0;
+  color: #fff !important;
+  width: 100%;
+  padding: 10px 14px;
+}
+
+.form-control-cine:focus {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--oro);
+  color: #fff !important;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.15);
+  outline: none;
+}
+
+.form-control-cine::placeholder { color: rgba(184,179,170,0.5); }
