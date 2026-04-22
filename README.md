@@ -21,8 +21,8 @@ una aplicación web full-stack desarrollada para la materia de Desarrollo de Apl
 
 1. Clona el repositorio:
 ```bash
-   git clone https://github.com/dnnnah/cinelatino-frontend.git
-   cd cinelatino-frontend
+   git clone https://github.com/dnnnah/cine-latino-frontend.git
+   cd cine-latino-frontend
 ```
 
 2. Instala dependencias:
