@@ -165,3 +165,24 @@
 .form-control-cine::placeholder {
   color: rgba(184,179,170,0.5);
 }
+
+/* Tabla responsive mobile */
+@media (max-width: 768px) {
+  .table-cine-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-cine thead th:nth-child(5),
+  .table-cine tbody td:nth-child(5) {
+    display: none;
+  }
+
+  .synopsis-truncate {
+    max-width: 120px;
+  }
+
+  .catalogo-section {
+    padding: 0 0.5rem 3rem 0.5rem;
+  }
+}
