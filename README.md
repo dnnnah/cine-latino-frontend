@@ -116,4 +116,3 @@ Repositorio backend: [cine-latino-backend](https://github.com/dnnnah/cine-latino
 | **Código** | 224065707 |
 | **Materia** | Desarrollo de Aplicaciones Web |
 | **Año** | 2026 |
-| **Contacto** | donnovan.trejo6570@gmail.com |
